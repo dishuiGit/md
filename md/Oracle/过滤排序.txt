@@ -1,0 +1,24 @@
+## Orcale--过滤和排序 ##
+#### 1.查看10 号部门的员工 ####
+	  select *
+	  from emp
+	  where deptno=10;
+	  注意:
+		1.字符串大小写敏感
+			<图片>
+		2.日期格式敏感
+			<图片>
+#### 2.修改日期格式 ####
+	  select * from v$nls_parameters;
+	  1,改变当前会话的日期格式
+	  alter session set NLS_DATE_FORMAT='yyyy-mm-dd';
+#### 3.between and ####
+	  查询薪水1000~2000之间的员工
+    	  select *
+	  from emp
+         where sal between 1000 and 2000;
+	--------------------------------------------
+	1. 包含边界 2. 小值在前 大值在后
+
+#### 4.in ####
+	查询部门号是10和20的员工

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>Test---01</title>
+        <link rel="stylesheet" href="file:///D:/1125/%E7%AC%94%E8%AE%B0/note/css/style.css" />
+        <link rel="stylesheet" href="file:///D:/1125/%E7%AC%94%E8%AE%B0/note/css/myColor.css" />
+        <link rel="stylesheet" href="file:///D:/1125/%E7%AC%94%E8%AE%B0/note/css/editormd.preview.css" />
+        <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+        <style>
+            .editormd-html-preview {
+                width: 90%;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="layout">
+            <header>
+            	<h1>Test---01</h1>     
+            </header>
+            <div id="test-editormd-view">
+               <textarea style="display:none;">###Hello world!</textarea>               
+            </div>
+        </div>
+        <textarea id="append-test" style="display:none;">
+</textarea>
+        <!-- <script src="js/zepto.min.js"></script>
+		<script>		
+			var jQuery = Zepto;  // Ϊ�˱����޸�flowChart.js��sequence-diagram.js��Դ�룬������֧��flowChart/sequenceDiagram�͵ü�����һ��
+		</script> -->
+        <script src="file:///D:/1125/%E7%AC%94%E8%AE%B0/note/js/jquery.min.js"></script>
+        <script src="file:///D:/1125/%E7%AC%94%E8%AE%B0/editor.md/editor/lib/marked.min.js"></script>
+        <script src="file:///D:/1125/%E7%AC%94%E8%AE%B0/editor.md/editor/lib/prettify.min.js"></script>
+        
+        <script src="file:///D:/1125/%E7%AC%94%E8%AE%B0/editor.md/editor/lib/raphael.min.js"></script>
+        <script src="file:///D:/1125/%E7%AC%94%E8%AE%B0/editor.md/editor/lib/underscore.min.js"></script>
+        <script src="file:///D:/1125/%E7%AC%94%E8%AE%B0/editor.md/editor/lib/sequence-diagram.min.js"></script>
+        <script src="file:///D:/1125/%E7%AC%94%E8%AE%B0/editor.md/editor/lib/flowchart.min.js"></script>
+        <script src="file:///D:/1125/%E7%AC%94%E8%AE%B0/editor.md/editor/lib/jquery.flowchart.min.js"></script>
+
+        <script src="file:///D:/1125/%E7%AC%94%E8%AE%B0/editor.md/editor/editormd.js"></script>  
+        <script type="text/javascript">
+			var testEditormdView;
+            var $base = "file:///D:/1125/%E7%AC%94%E8%AE%B0/note/";
+            $(function() {
+                $.get($base+"md/Test---01.md", function(markdown) {
+				    testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+                        markdown : markdown + $("#append-test").val(),
+                        //htmlDecode : true,       // ����HTML��ǩ������Ϊ�˰�ȫ�ԣ�Ĭ�ϲ�����
+                        htmlDecode : "style,script,iframe",  // you can filter tags decode
+                        //toc : false,
+                        //gfm : false,
+                        //tocDropdown : true,
+                        emoji : true,
+                        taskList : true,
+                        tex : true,              // Ĭ�ϲ�����
+                        flowChart: true,         // Ĭ�ϲ�����
+                        sequenceDiagram : true,  // Ĭ�ϲ�����
+                    });
+                    
+                    //console.log("����һ��jQueryʵ�� =>", testEditormdView);
+                    
+                    // ��ȡMarkdownԴ��
+                    //console.log(testEditormdView.getMarkdown());
+                });
+            });
+        </script>
+    </body>
+</html>
